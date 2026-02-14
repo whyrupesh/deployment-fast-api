@@ -1,1 +1,4 @@
 fastapi[all]
+psycopg2-binary
+sentence-transformers
+pydantic
