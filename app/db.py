@@ -30,4 +30,5 @@ DB_CONFIG = {
 #     )
 
 def get_connection():
+    print("Connecting to DB with config:", DB_CONFIG)
     return psycopg2.connect(**DB_CONFIG, cursor_factory=RealDictCursor)
