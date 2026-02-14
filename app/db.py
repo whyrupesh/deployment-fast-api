@@ -9,6 +9,15 @@ from psycopg2.extras import RealDictCursor
 #     "port": 5432
 # }
 
+# DB_CONFIG = {
+#     "dbname": "postgres",
+#     "user": "postgres.wwdfoxewxvzamcjtxazj",
+#     "host": "aws-1-ap-southeast-1.pooler.supabase.com",
+#     "port": "6543",
+#     "password": "FundizrDb@123",
+#     "sslmode": "require"
+# }
+
 DB_CONFIG = {
     "dbname": os.getenv("SUPABASE_DB_NAME"),
     "user": os.getenv("SUPABASE_DB_USER"),

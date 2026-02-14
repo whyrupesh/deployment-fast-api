@@ -1,4 +1,5 @@
 from typing import Optional
+from fastapi.middleware.cors import CORSMiddleware
 
 from fastapi import FastAPI
 
@@ -13,6 +14,14 @@ from app.services.matcher import match_investors
 
 app = FastAPI()
 
+# CORS configuration
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # For development. Change in production.
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 async def root():
