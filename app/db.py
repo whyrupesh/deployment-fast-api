@@ -18,12 +18,16 @@ from psycopg2.extras import RealDictCursor
 #     "sslmode": "require"
 # }
 
+def get_env(key):
+    val = os.getenv(key)
+    return val.strip('"').strip("'") if val else None
+
 DB_CONFIG = {
-    "dbname": os.getenv("SUPABASE_DB_NAME"),
-    "user": os.getenv("SUPABASE_DB_USER"),
-    "host": os.getenv("SUPABASE_DB_HOST"),
-    "port": os.getenv("SUPABASE_DB_PORT"),
-    "password": os.getenv("SUPABASE_DB_PASSWORD"),
+    "dbname": get_env("SUPABASE_DB_NAME"),
+    "user": get_env("SUPABASE_DB_USER"),
+    "host": get_env("SUPABASE_DB_HOST"),
+    "port": get_env("SUPABASE_DB_PORT"),
+    "password": get_env("SUPABASE_DB_PASSWORD"),
     "sslmode": "require"
 }
 
@@ -39,5 +43,5 @@ DB_CONFIG = {
 #     )
 
 def get_connection():
-    print("Connecting to DB with config:", DB_CONFIG)
+    # print("Connecting to DB with config:", DB_CONFIG)
     return psycopg2.connect(**DB_CONFIG, cursor_factory=RealDictCursor)

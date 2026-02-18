@@ -11,8 +11,11 @@ from app.schemas import (
 )
 
 from app.services.matcher import match_investors
+from app.routers import investors
 
 app = FastAPI()
+
+app.include_router(investors.router)
 
 # CORS configuration
 app.add_middleware(
