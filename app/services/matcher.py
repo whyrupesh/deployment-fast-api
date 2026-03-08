@@ -47,6 +47,7 @@ def match_investors(
             i.id::text AS investor_id,
             i.slug,
             i.name,
+            i.image,
             ARRAY_AGG(DISTINCT d.name) AS matched_domains,
             COUNT(DISTINCT d.id) AS domain_match_count
         FROM investors i
