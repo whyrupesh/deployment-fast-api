@@ -19,6 +19,7 @@ class MatchedInvestor(BaseModel):
     name: str | None
     slug: str
     image: str | None = None
+    new_image: str | None = None
     matched_domains: List[str]
     domain_match_count: int
 

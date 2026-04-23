@@ -20,6 +20,7 @@ class InvestorBase(BaseModel):
     max_investment: Optional[int] = None
     target_investment: Optional[int] = None
     image: Optional[str] = None
+    new_image: Optional[str] = None
     created_at: Optional[datetime] = None
 
 class InvestorRead(InvestorBase):

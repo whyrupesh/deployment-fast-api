@@ -22,6 +22,7 @@ class Investor(Base):
     max_investment = Column(Integer, nullable=True)
     target_investment = Column(Integer, nullable=True)
     image = Column(Text, nullable=True)
+    new_image = Column(Text, nullable=True)
     created_at = Column(TIMESTAMP, nullable=True)
 
     def __repr__(self):
